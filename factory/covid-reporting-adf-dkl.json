@@ -1,0 +1,9 @@
+{
+	"name": "covid-reporting-adf-dkl",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "75506467-1083-402b-9b6c-1f1930408e90",
+		"tenantId": "83696c1e-1424-49cd-b492-d64f3e551ee4"
+	}
+}
