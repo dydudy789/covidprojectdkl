@@ -46,7 +46,12 @@ apply transformations in Databricks and save the processed file into Data lake's
 ![alt text](https://user-images.githubusercontent.com/21047696/241617300-6328f60b-7088-4b82-9764-a57ffc25620c.png)
 
 Transformations:
-Columns split, renamed, missing values treated as null, joined with lookup table to get country name, unwanted years removed, pivotted so age variables are columns instead of values.
+* Split columns
+* Renamed columns
+* Treated missing values as null
+* Joined with lookup table to get country name
+* Unwanted years removed
+* Pivotted table to make age variables as columns instead of values.
 
 
 
@@ -66,7 +71,10 @@ ADF also copies the files into Azure SQL Database so it can be accessed for anal
 **TRANSFORMED CASES AND DEATHS DATA**
 ![alt text](https://user-images.githubusercontent.com/21047696/241617347-66fbae1e-2f6a-433d-bbcf-a655c1fff54c.png)
 
-
+Transformations:
+* Filterd for Europe data only
+* Selected only required fields and renamed them
+* Pivoted the 'indicator' column to make cases_count and deaths_count as columns instead of values
 
 ### Testing data:
 For practise testing data was transformed in HD Insight.
