@@ -1,8 +1,5 @@
-# Table of Contents
-
-
 # General Info
-This is a data engineering project regarding Covid 19, assisted by a udemy course by Ramesh Retnasamy https://www.udemy.com/course/learn-azure-data-factory-from-scratch/
+This is a data engineering project regarding Covid 19, assisted by a data engineering course by Ramesh Retnasamy
 
 
 # Datasets
@@ -79,6 +76,22 @@ Transformations:
 ### Testing data:
 For practise testing data was transformed in HD Insight.
 Transformed files were copied into Azure SQL Database for analysis and dashboarding.
+ 
+ Process within HD Insight Script:
+* Create external tables for lookup files (dim_date, dim_country) and raw data (raw testing data). These tables are built on files from Azure Data Lake.
+* Also create external table to the destination data, testing data in the processed file.
+* Join lookup tables to the raw testing data and apply transformations and INSER TABLE into the destination location.
 
+
+**EXAMPLE SQL TRANSFORMATION WITHIN HD INSIGHT**
+![alt text](https://user-images.githubusercontent.com/21047696/241744814-88916c7c-7e2f-4bc1-9191-edf23407c2b6.png)
 
 # Triggers 
+**Population Data:** Events trigger was used to detect the population data landing on Azure Blob Storage to then process the ingestion into data lake, deletion from Blob storage, transformation, and copying to SQL.
+
+**Cases/Deaths Data:**
+* Tumbling window trigger is used which runs everyday at midnight to get cases/deaths data from the website and ingest it into Data lake. 
+* Tumbling windows triggers for procesing is dependant on the ingestion trigger, and trigger to copying to SQL DB is dependent on the processing trigger. 
+
+
+
