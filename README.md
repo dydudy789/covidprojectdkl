@@ -32,7 +32,9 @@ Save populations file in Azure Blob Storage (to practise transferring to data la
 
 ![alt text](https://user-images.githubusercontent.com/21047696/241493403-d0ea6b13-c593-4da9-b2a3-e026a704bee9.png)
 
-Population data: ADF detects if population data lands in Azure Blob Storage through trigger. It invokes pipelines to 
+### Population data:
+
+ADF detects if population data lands in Azure Blob Storage through trigger. It invokes pipelines to 
 copy the file into Azure Data Lake, raw file and delete it from Blob storage. 
 apply transformations in Databricks and save the processed file into Data lake's 'proccessed' file.
 
@@ -43,14 +45,30 @@ apply transformations in Databricks and save the processed file into Data lake's
 
 ![alt text](https://user-images.githubusercontent.com/21047696/241617300-6328f60b-7088-4b82-9764-a57ffc25620c.png)
 
+Transformations:
+Columns split, renamed, missing values treated as null, joined with lookup table to get country name, unwanted years removed, pivotted so age variables are columns instead of values.
 
 
-Confirmed cases and hospital admissions data: ADF tumbling window triggers run everyday at midnight to access the website for data. 
+
+### Confirmed cases and hospital admissions data:
+
+ADF tumbling window triggers run everyday at midnight to access the website for data. 
 ADF pipeline goes through a lookup list of files to get from the websiite and copies them to data lake. raw file. 
 Additional triggers for proccessing in Data flow is invokes when the first trigger is successful. Data is transformed in Data flow and saved in processed file in data lake.
 ADF also copies the files into Azure SQL Database so it can be accessed for analysis and dashboarding. 
 
-Testing data:
+**EXAMPLE DATA FLOW TRANSFORMATION IN ADF**
+![alt text](https://user-images.githubusercontent.com/21047696/241617322-a4300dc1-4b2a-4f14-b986-3dd01e7f848a.png)
+
+**RAW CASES AND DEATHS DATA**
+![alt text](https://user-images.githubusercontent.com/21047696/241617336-faff80de-9b76-4880-a60b-5900903adf84.png)
+
+**TRANSFORMED CASES AND DEATHS DATA**
+![alt text](https://user-images.githubusercontent.com/21047696/241617347-66fbae1e-2f6a-433d-bbcf-a655c1fff54c.png)
+
+
+
+### Testing data:
 For practise testing data was transformed in HD Insight.
 Transformed files were copied into Azure SQL Database for analysis and dashboarding.
 
