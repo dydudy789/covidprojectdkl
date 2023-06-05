@@ -97,6 +97,8 @@ Transformed files were copied into Azure SQL Database for analysis and dashboard
 
 Power BI directly import the datasets from SQL database using server and database name and the database credentials.
 
+The charts show trend of covid cases, deaths, hospital and and icu occupancy. They are filterable by country and date. 
+
 ![alt text](https://user-images.githubusercontent.com/21047696/243354299-173a6f18-4dc2-4394-b6cd-13ee58513cd0.png)
 
 ![alt text](https://user-images.githubusercontent.com/21047696/243354367-8c11ad90-5472-4637-bc11-14bf8cfbe947.png)
