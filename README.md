@@ -93,5 +93,10 @@ Transformed files were copied into Azure SQL Database for analysis and dashboard
 * Tumbling window trigger is used which runs everyday at midnight to get cases/deaths data from the website and ingest it into Data lake. 
 * Tumbling windows triggers for procesing is dependant on the ingestion trigger, and trigger to copying to SQL DB is dependent on the processing trigger. 
 
+# Power BI Dashboard
+
+![alt text](https://user-images.githubusercontent.com/21047696/243354299-173a6f18-4dc2-4394-b6cd-13ee58513cd0.png)
+
+![alt text](https://user-images.githubusercontent.com/21047696/243354367-8c11ad90-5472-4637-bc11-14bf8cfbe947.png)
 
 
